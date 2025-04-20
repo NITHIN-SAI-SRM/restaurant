@@ -8,10 +8,10 @@ import app from './app.js';
 const __dirname = path.resolve();
 
 // ✅ Serve Vite build files from frontend/dist
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
 });
 
 app.listen(process.env.PORT, () => {
